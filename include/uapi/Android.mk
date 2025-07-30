@@ -1,6 +1,6 @@
 # Use this by setting
 #   LOCAL_HEADER_LIBRARIES := audio_kernel_headers
-
+ifneq ($(TARGET_AUDIO_KERNEL_HEADERS_DEFINED),true)
 LOCAL_PATH := $(call my-dir)
 MYLOCAL_PATH := $(LOCAL_PATH)
 
@@ -28,3 +28,4 @@ LOCAL_GENERATED_SOURCES := $(GEN)
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(UAPI_OUT)
 
 include $(BUILD_HEADER_LIBRARY)
+endif
